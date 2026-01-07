@@ -96,11 +96,6 @@ That’s it — runs directly in the browser 🚀
 
 ---
 
-## 🌟 Screenshots / Demo
-*(Optional: add screenshots or a GIF here)*
-
----
-
 ## 📌 Future Enhancements
 
 - Password strength meter
