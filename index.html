@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Input Validation Utility</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <form class="card" id="validatorForm" novalidate>
+      <h2>🕷️ Input Validator</h2>
+
+      <div class="field">
+        <label>Email</label>
+        <input type="text" id="email" placeholder="hero@email.com" />
+        <small class="error" id="emailError"></small>
+      </div>
+
+      <div class="field">
+        <label>Age</label>
+        <input type="text" id="age" placeholder="18 - 60" />
+        <small class="error" id="ageError"></small>
+      </div>
+
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="********" />
+        <small class="error" id="passwordError"></small>
+      </div>
+
+      <button type="submit">Validate</button>
+      <p class="success" id="successMsg"></p>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
