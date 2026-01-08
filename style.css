@@ -9,32 +9,42 @@ body {
   background: linear-gradient(135deg, #0b0f1a, #8b0000, #001f3f);
   min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  position: relative;
+  align-items: flex-start;   /* 🔥 important */
+  overflow-y: auto;          /* 🔥 allow scrolling */
 }
 
 .container {
   width: 100%;
-  padding: 20px;
+  padding: 30px 20px;
 }
 
 .card {
-  max-width: 400px;
-  margin: auto;
+  max-width: 420px;
+  width: 100%;
+  margin: 40px auto;         /* 🔥 allows downward expansion */
   background: rgba(255, 255, 255, 0.95);
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
   position: relative;
-  z-index: 2;
 }
 
+/* Title */
 h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
+/* Summary Message */
+.summary {
+  text-align: center;
+  color: #b00020;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Fields */
 .field {
   margin-bottom: 15px;
 }
@@ -50,12 +60,14 @@ input {
   border-radius: 6px;
   border: 1px solid #ccc;
   outline: none;
+  transition: 0.3s;
 }
 
 input:focus {
   border-color: #8b0000;
 }
 
+/* Validation States */
 input.valid {
   border-color: green;
   box-shadow: 0 0 10px rgba(0, 255, 153, 0.6);
@@ -66,6 +78,7 @@ input.invalid {
   animation: shake 0.3s ease, errorGlow 0.8s ease;
 }
 
+/* Messages */
 .error {
   color: red;
   font-size: 13px;
@@ -79,6 +92,30 @@ input.invalid {
   font-weight: bold;
 }
 
+/* Password Box */
+.password-box {
+  position: relative;
+}
+
+.password-box span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Strength Indicator */
+.strength {
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.strength.weak { color: red; }
+.strength.medium { color: orange; }
+.strength.strong { color: green; }
+
+/* Button */
 button {
   width: 100%;
   padding: 10px;
@@ -94,7 +131,8 @@ button:hover {
   background: #a80000;
 }
 
-/* Animations */
+/* ---------- Spider-Man Animations ---------- */
+
 @keyframes shake {
   0% { transform: translateX(0); }
   25% { transform: translateX(-5px); }
@@ -110,33 +148,17 @@ button:hover {
 }
 
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Web shoot */
-.web-line {
-  position: absolute;
-  top: -100px;
-  left: 50%;
-  width: 4px;
-  height: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    #fff,
-    #fff 4px,
-    transparent 4px,
-    transparent 8px
-  );
-  transform: translateX(-50%);
-  animation: shootWeb 0.4s ease forwards;
-}
-
-@keyframes shootWeb {
-  to { height: 120px; }
-}
-
-/* Screen flash */
+/* Screen Flash */
 .screen-flash {
   position: fixed;
   inset: 0;
@@ -149,7 +171,7 @@ button:hover {
   to { opacity: 0; }
 }
 
-/* Card impact */
+/* Card Impact */
 .card.impact {
   animation: cardImpact 0.4s ease;
 }
@@ -159,27 +181,9 @@ button:hover {
   60% { transform: scale(0.97); }
 }
 
-/* Fail badge */
-.fail-badge {
-  position: absolute;
-  top: -35px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #b00020;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-weight: bold;
-}
-.fail-badge::before {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #b00020;
+/* Responsive */
+@media (max-width: 480px) {
+  .card {
+    padding: 20px;
+  }
 }
