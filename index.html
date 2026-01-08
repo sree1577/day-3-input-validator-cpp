@@ -7,31 +7,62 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <div class="container">
     <form class="card" id="validatorForm" novalidate>
       <h2>🕷️ Input Validator</h2>
 
+      <p class="summary" id="summaryMsg" aria-live="polite"></p>
+
+      <!-- Username -->
+      <div class="field">
+        <label>Username</label>
+        <input type="text" id="username" placeholder="hero_user" />
+        <small class="error" id="usernameError"></small>
+      </div>
+
+      <!-- Email -->
       <div class="field">
         <label>Email</label>
         <input type="text" id="email" placeholder="hero@email.com" />
         <small class="error" id="emailError"></small>
       </div>
 
+      <!-- Phone -->
+      <div class="field">
+        <label>Phone Number</label>
+        <input type="text" id="phone" placeholder="10-digit number" />
+        <small class="error" id="phoneError"></small>
+      </div>
+
+      <!-- Age -->
       <div class="field">
         <label>Age</label>
         <input type="text" id="age" placeholder="18 - 60" />
         <small class="error" id="ageError"></small>
       </div>
 
+      <!-- Password -->
       <div class="field">
         <label>Password</label>
-        <input type="password" id="password" placeholder="********" />
+        <div class="password-box">
+          <input type="password" id="password" placeholder="********" />
+          <span id="togglePassword">👁️</span>
+        </div>
+        <small class="strength" id="strengthMsg"></small>
         <small class="error" id="passwordError"></small>
       </div>
 
+      <!-- Confirm Password -->
+      <div class="field">
+        <label>Confirm Password</label>
+        <input type="password" id="confirmPassword" placeholder="********" />
+        <small class="error" id="confirmPasswordError"></small>
+      </div>
+
+      <!-- Submit -->
       <button type="submit">Validate</button>
       <p class="success" id="successMsg"></p>
+
     </form>
   </div>
 

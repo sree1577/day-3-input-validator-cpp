@@ -1,6 +1,6 @@
 # 🕷️ Day 3 – Input Validation Utility (Spider-Man Theme)
 
-A responsive frontend web application that validates user inputs such as **email, age, and password** with **defensive programming**, **clear error handling**, and **Spider-Man–inspired animations**.
+A responsive frontend web application that validates user inputs such as username, email, phone number, age, password, and confirm password with defensive programming, real-time validation, and Spider-Man–inspired animations.
 
 This project is part of the **30 Days – 30 Projects** challenge (Day 3, Project 3).
 
@@ -8,18 +8,23 @@ This project is part of the **30 Days – 30 Projects** challenge (Day 3, Projec
 
 ## 🚀 Live Features
 
-- ✅ Email validation using regex  
-- ✅ Age validation (numeric, range 18–60)  
-- ✅ Strong password validation  
-- ❌ Animated error feedback for invalid inputs  
-- 🕷️ Spider-Man–style animations:
-  - Input shake & glow
-  - Web-shoot animation
-  - Screen flash on error
-  - “Validation Failed” badge
-- 📱 Fully responsive (mobile-first)
-- 🎨 Clean, modern superhero-themed UI
-
+✅ Username validation (length & allowed characters)
+✅ Email validation using regex
+✅ Phone number validation (10-digit format)
+✅ Age validation (numeric, range 18–60)
+✅ Strong password validation
+✅ Confirm password matching
+⚡ Real-time validation while typing
+👁️ Show / Hide password toggle
+📊 Password strength indicator (Weak / Medium / Strong)
+❌ Animated error feedback for invalid inputs
+🕷️ Spider-Man–style animations:
+      Input shake & glow
+      Web-shoot animation
+      Screen flash on error
+      “Validation Failed” badge
+📱 Fully responsive (mobile-first)
+🎨 Clean, modern superhero-themed UI
 ---
 
 ## 🧠 Concepts Covered
@@ -28,6 +33,8 @@ This project is part of the **30 Days – 30 Projects** challenge (Day 3, Projec
 - Defensive programming
 - Regular expressions (Regex)
 - DOM manipulation
+- Real-time form validation
+- Password security rules
 - CSS animations & transitions
 - Responsive UI design
 - User-friendly error feedback
@@ -58,9 +65,17 @@ day-03-input-validator/
 
 ## 📋 Validation Rules
 
+### 👤 Username
+
+- Length: 4–15 characters
+- Allowed characters: letters, numbers, underscore (_)
+
 ### 📧 Email
 - Must not be empty  
 - Must follow standard email format  
+
+### 📞 Phone Number
+- Must be a valid 10-digit number
 
 ### 🎂 Age
 - Must be a number  
@@ -72,17 +87,21 @@ day-03-input-validator/
 - At least **1 number**
 - At least **1 special character**
 
+### 🔁 Confirm Password
+- Must exactly match the password field
+
 ---
 
 ## 🎮 User Experience
 
-| Action | Result |
-|------|------|
-| Invalid input | Shake + red glow |
-| Submit invalid form | Web animation + screen flash |
-| Validation failure | Animated error badge |
-| Valid input | Green glow |
-| All inputs valid | Success message |
+Action	                    Result
+Invalid input	        Shake + red glow
+Typing input	        Real-time validation feedback
+Weak password	        Strength indicator shown
+Submit invalid form	  Web animation + screen flash
+Validation failure	  Animated error badge
+Valid input	          Green glow
+All inputs valid	    Success message
 
 ---
 
@@ -96,27 +115,10 @@ That’s it — runs directly in the browser 🚀
 
 ---
 
-## 🌟 Screenshots / Demo
-*(Optional: add screenshots or a GIF here)*
-
----
-
 ## 📌 Future Enhancements
 
-- Password strength meter
+- Save validated data using localStorage
 - Sound effects for error/success
 - Dark / Light mode toggle
 - Success animation (“Level Completed 🕸️”)
-
----
-
-## 🧑‍💻 Author
-
-**Dhanyata Kothapalli**  
-B.Tech Student | Frontend Developer | Aspiring Software Engineer  
-
----
-
-## 📄 License
-
-This project is open-source and free to use for learning and portfolio purposes.
+- Convert to React version
